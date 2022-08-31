@@ -1,15 +1,7 @@
 import { BaseRouter } from "../common/base.controller";
-import { json, Request, Response } from "express";
+import { Request, Response } from "express";
 import nodemailer from "nodemailer";
 import axios from "axios";
-
-const mailAuth = {
-  type: "OAuth2",
-  user: "nogdire@gmail.com",
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  refreshToken: process.env.REFRESH_TOKEN,
-};
 
 export class MessageController extends BaseRouter {
   constructor() {
