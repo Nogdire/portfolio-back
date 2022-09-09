@@ -45,7 +45,7 @@ export class MessageController extends BaseRouter {
       );
 
       if (response.status !== 200) {
-        return res.status(400).json({ message: "Error sending error" });
+        return res.status(400).json({ message: "Error sending" });
       }
 
       return res.status(200).json({
@@ -63,11 +63,8 @@ export class MessageController extends BaseRouter {
     const transport = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        type: "OAuth2",
         user: "nogdire@gmail.com",
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN,
+        pass: process.env.MAIL_PASS,
       },
     });
 

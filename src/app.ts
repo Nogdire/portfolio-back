@@ -24,6 +24,6 @@ export class App {
     this.app.use(cors());
     this.useRoutes();
     this.server = this.app.listen(this.port);
-    console.log(`Server running on http://loaclhost:${this.port} port`);
+    console.log(`Server running on http://localhost:${this.port} port`);
   }
 }
